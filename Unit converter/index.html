@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unit Converter</title>
+    <link rel="stylesheet" id="myStyleSheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@700&display=swap" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@700&display=swap');
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+
+    <div class="header" id="header">
+        <h1 class="title" id="title">
+            Unit Converter
+        </h1>
+    </div>
+
+    <div class="main">
+        <fieldset>
+            <legend>
+                Converter Tool
+            </legend>
+
+            <select id="categories" onchange="displayFromSection()">
+                <option value="default" selected disabled hidden id="changeTextForSmallScreen">Choose the category</option>
+                <option value="Area">Area</option>
+                <option value="Length">Length</option>
+                <option value="Mass">Mass</option>
+                <option value="Speed">Speed</option>
+                <option value="Pressure">Pressure</option>
+                <option value="Temperature">Temperature</option>
+                <option value="Time">Time</option>
+                <option value="Volume">Volume</option>
+            </select>
+
+        </fieldset>
+
+        <br>
+        <br>
+
+        <fieldset id="from">
+            <legend>
+                From
+            </legend>
+
+            <input id="fromInput" type="number" min="0" placeholder="Enter a value"
+                onkeyup="validity.valid||(value='');displayToSection();">
+            <select id="fromSelect" onchange="displayToSection()">
+                <option value="default" selected disabled hidden>Please Choose unit</option>
+            </select>
+
+        </fieldset>
+
+
+
+        <br>
+        <br>
+
+        <fieldset id="to">
+            <legend>
+                To
+            </legend>
+
+            <select id="toSelect" onchange="displayAnswer()">
+                <option value="default" disabled hidden>Please Choose unit</option>
+            </select>
+            <p id="answer">
+
+            </p>
+
+        </fieldset>
+
+
+
+    </div>
+
+    <script src="index.js"></script>
+</body>
+
+</html>
